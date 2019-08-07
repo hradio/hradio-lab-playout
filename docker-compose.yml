@@ -105,9 +105,9 @@ services:
     - PADENC_INPUT_DLS=/dab/service1/dls/dls_1.txt #FIFO or file to read DLS text from.
     - PADENC_INPUT_SLS=/dab/service1/sls #Directory to read images from.
     - PADENC_DELAY=1 #Wait DELAY seconds between each slide
-    - PADENC_FRAME=20 #Frame length for uniform mode
-    - PADENC_PADSIZE=58 #Set PAD size in bytes.
-    - PADENC_OTHERS= #E.g. -R for Do not process slides integrity checks and resizing
+    - PADENC_FRAME=40 #Frame length for uniform mode
+    - PADENC_PADSIZE=116 #Set PAD size in bytes.
+    - PADENC_OTHERS= -s 3 #E.g. -R for Do not process slides integrity checks and resizing
     depends_on:
       - mpd
     restart: unless-stopped
@@ -125,7 +125,7 @@ services:
     - AUDIOENC_INPUT=http://mpd:8000/ # input url
     - AUDIOENC_OUTPUT=tcp://odr-dabmux:9001 #output - see mux.conf
     - AUDIOENC_BITRATE=128 #Output bitrate in kbps. Must be a multiple of 8
-    - AUDIOENC_PADSIZE=58 #Set PAD size in bytes.
+    - AUDIOENC_PADSIZE=116 #Set PAD size in bytes.
     - AUDIOENC_PADFILE=/input/service1.pad #Set PAD data input fifo name
     - AUDIOENC_OTHERS= #E.g. --aaclc
     depends_on:
