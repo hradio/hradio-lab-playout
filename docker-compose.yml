@@ -55,8 +55,8 @@ services:
       - mpd
     volumes:
       - ./hradio-edihttp/edihttp.conf:/root/edihttp.conf
-#    environment:
-#    - EDIHTTP_CONFIGPATH=
+    environment:
+    - EDIHTTP_CONFIGPATH=/root/
 #    - EDIHTTP_MAX_TIMESHIFT_GLOBAL=
 #    - EDIHTTP_SBT_SUBCHANS=
 #    - EDIHTTP_VERBOSE=
