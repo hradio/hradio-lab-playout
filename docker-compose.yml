@@ -53,9 +53,17 @@ services:
       - "8187:8187"
     depends_on:
       - mpd
-    environment:
-    - UDP_INCOMING_PORT=50000
-    - HTTP_OUTGOING_PORT=8187
+    volumes:
+      - ./hradio-edihttp/edihttp.conf:/root/edihttp.conf
+#    environment:
+#    - EDIHTTP_CONFIGPATH=
+#    - EDIHTTP_MAX_TIMESHIFT_GLOBAL=
+#    - EDIHTTP_SBT_SUBCHANS=
+#    - EDIHTTP_VERBOSE=
+#    - EDIHTTP_UDP_PORT=
+#    - EDIHTTP_HTTP_PORT=
+#    - EDIHTTP_PROXY_PORT=
+#    - EDIHTTP_HOSTS=
     restart: unless-stopped
     logging:
       options:
