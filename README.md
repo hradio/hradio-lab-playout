@@ -80,6 +80,7 @@ HRADIO_MEDIABASEPATH | path where to find the audio files
 HRADIO_PRESENDTIME | Time in ms to create the DLP and SLS before the new song (defaults to 2000)  
 HRADIO_MPDHOST | Hostname of mpd (defaults to mpd)
 HRADIO_MPDPORT | Port for mpd (defaults to 6600)  
+HRADIO_ENABLECONSUME | Set to true if the service should enable consume in mpd  
 
 Needs to have the music folder mounted to export the images for the slideshow.
 Also needs the to the ./odr-padenc/ folder mounted to write the new data to.
